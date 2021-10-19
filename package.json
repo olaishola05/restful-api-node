@@ -1,0 +1,25 @@
+{
+  "name": "restful-api-node",
+  "version": "1.0.0",
+  "description": "A second dive into making a restful API with Nodejs, express and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "start-watch": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netman5/restful-api-node.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/netman5/restful-api-node/issues"
+  },
+  "homepage": "https://github.com/netman5/restful-api-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
