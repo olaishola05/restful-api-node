@@ -28,15 +28,25 @@ router.post("/", async (req, res) => {
 });
 
 // get customeer with email
-
 router.get("/", async (req, res) => {
   if (!req.query.email) {
     return res.status(400).json("Missing URL parameter: email");
   }
 
   try {
-    const custome = await CustomerModel.findOne(req.query.email);
+    const custome = await CustomerModel.find(req.query.email);
     res.status(200).json(custome);
+  } catch (err) {
+    res.status(500).json({ message: err });
+  }
+});
+
+// get user by id
+router.get("/:customerId", async (req, res) => {
+  try {
+    const id = req.params.customerId;
+    const customer = await CustomerModel.findById(id);
+    res.status(200).json(customer);
   } catch (err) {
     res.status(500).json({ message: err });
   }

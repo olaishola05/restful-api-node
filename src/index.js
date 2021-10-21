@@ -5,13 +5,14 @@ const customerRoute = require("./route/customer");
 const path = require("path");
 const mongoose = require("mongoose");
 require("dotenv/config");
-const bodyParser = require("body-parser");
+// const bodyParser = require("body-parser");
 
 mongoose.connect(process.env.MONGO_URL, () => {
   console.log("Connected to DB!");
 });
 
-app.use(bodyParser.json());
+// app.use(bodyParser.json());
+app.use(express.json());
 
 // Logger middleware
 app.use((req, res, next) => {
@@ -20,7 +21,6 @@ app.use((req, res, next) => {
 });
 
 // Routes
-
 app.use("/persons", personRoute);
 app.use("/customers", customerRoute);
 
